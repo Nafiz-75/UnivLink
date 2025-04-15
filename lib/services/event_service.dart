@@ -1,7 +1,7 @@
 import '../models/event_model.dart';
 
 class EventService {
-  // Dummy data list (you'll replace with Firebase later)
+  
   final List<EventModel> _events = [];
 
   // Get all events
