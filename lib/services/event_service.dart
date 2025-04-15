@@ -1,7 +1,7 @@
 import '../models/event_model.dart';
 
 class EventService {
-  // Dummy data list (you'll replace with Firebase later)
+  
   final List<EventModel> _events = [];
 
   // Get all events
@@ -45,4 +45,21 @@ class EventService {
     if (index != -1 && !_events[index].enrolledUsers.contains(userId)) {
       _events[index].enrolledUsers.add(userId);
     }
-  }
+  }  // Get event by ID (async)
+  Future<EventModel> getEventById(String eventId) async {
+    final event = _events.firstWhere(
+      (event) => event.id == eventId,
+      orElse:
+          () => EventModel(
+            id: 'null',
+            title: 'Unknown Event',
+            description: 'No description available',
+            location: 'Unknown location',
+            date: DateTime.now(),
+            organizer: 'Unknown',
+            isPaid: false,
+            goingUsers: [],
+            interestedUsers: [],
+            enrolledUsers: [],
+          ),
+    );

@@ -101,6 +101,62 @@ class _EventManagementPageState extends State<EventManagementPage> {
       });
     }
   }
-
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Create Event')),
+      drawer: DrawerNavigation(),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextField(
+                controller: titleController,
+                decoration: InputDecoration(labelText: 'Title'),
+              ),
+              TextField(
+                controller: descriptionController,
+                decoration: InputDecoration(labelText: 'Description'),
+              ),
+              TextField(
+                controller: dateController,
+                readOnly: true,
+                onTap: _selectDate,
+                decoration: InputDecoration(labelText: 'Date'),
+              ),
+              TextField(
+                controller: timeController,
+                readOnly: true,
+                onTap: _selectTime,
+                decoration: InputDecoration(labelText: 'Time'),
+              ),
+              TextField(
+                controller: locationController,
+                decoration: InputDecoration(labelText: 'Location'),
+              ),
+            TextField(
+                controller: organizerController,
+                decoration: InputDecoration(labelText: 'Organizer'),
+              ),
+              SizedBox(height: 16),
+              SwitchListTile(
+                title: Text('Enable Enrollment'),
+                value: enrollmentEnabled,
+                onChanged: (val) {
+                  setState(() {
+                    enrollmentEnabled = val;
+                  });
+                },
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(onPressed: addEvent, child: Text('Save Event')),
+            ],
+          ),
+        ),
+    ),
+);
+}
+}
 
 
