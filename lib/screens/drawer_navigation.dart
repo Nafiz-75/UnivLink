@@ -27,5 +27,15 @@ class DrawerNavigation extends StatelessWidget {
               );
             },
           ),
+          // My Events Page
+          ListTile(
+            title: Text('My Events'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MyEventsPage()),
+              );
+            },
+          ),
 
 
