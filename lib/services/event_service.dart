@@ -45,4 +45,21 @@ class EventService {
     if (index != -1 && !_events[index].enrolledUsers.contains(userId)) {
       _events[index].enrolledUsers.add(userId);
     }
-  }
+  }  // Get event by ID (async)
+  Future<EventModel> getEventById(String eventId) async {
+    final event = _events.firstWhere(
+      (event) => event.id == eventId,
+      orElse:
+          () => EventModel(
+            id: 'null',
+            title: 'Unknown Event',
+            description: 'No description available',
+            location: 'Unknown location',
+            date: DateTime.now(),
+            organizer: 'Unknown',
+            isPaid: false,
+            goingUsers: [],
+            interestedUsers: [],
+            enrolledUsers: [],
+          ),
+    );
