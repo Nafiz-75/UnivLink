@@ -68,5 +68,27 @@ class _EventManagementPageState extends State<EventManagementPage> {
       enrolledUsers: [],
     );
 
-    
+     eventList.add(newEvent);
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Event Created!')));
+
+    Navigator.pop(context);
+  }
+
+  Future<void> _selectDate() async {
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2030),
+    );
+    if (picked != null) {
+      setState(() {
+        dateController.text = "${picked.toLocal()}".split(' ')[0];
+      });
+    }
+  }
+
 
