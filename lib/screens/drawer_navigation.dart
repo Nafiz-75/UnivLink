@@ -4,6 +4,8 @@ import 'my_events_page.dart';
 import 'event_management_page.dart';
 
 class DrawerNavigation extends StatelessWidget {
+  const DrawerNavigation({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -27,7 +29,9 @@ class DrawerNavigation extends StatelessWidget {
               );
             },
           ),
+
           // My Events Page
+          
           ListTile(
             title: Text('My Events'),
             onTap: () {

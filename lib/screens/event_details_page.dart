@@ -7,7 +7,7 @@ class EventDetailsPage extends StatefulWidget {
   final String eventId;
   final String userId;
 
-  EventDetailsPage({required this.eventId, required this.userId});
+  const EventDetailsPage({super.key, required this.eventId, required this.userId});
 
   @override
   _EventDetailsPageState createState() => _EventDetailsPageState();
