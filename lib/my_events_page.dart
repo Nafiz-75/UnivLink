@@ -28,3 +28,20 @@ class MyEventsPage extends StatelessWidget {
               },
             ),
 
+            // Saved Events tab
+            ListView.builder(
+              itemCount: savedEvents.length,
+              itemBuilder: (context, index) {
+                final event = savedEvents[index];
+                return ListTile(
+                  title: Text(event.title),
+                  subtitle: Text(event.location),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
