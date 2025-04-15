@@ -17,7 +17,7 @@ class DrawerNavigation extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
-              // Home Page
+          // Home Page
           ListTile(
             title: Text('Home'),
             onTap: () {
@@ -27,5 +27,27 @@ class DrawerNavigation extends StatelessWidget {
               );
             },
           ),
-
-
+          // My Events Page
+          ListTile(
+            title: Text('My Events'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MyEventsPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Manage Event'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => EventManagementPage()),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
