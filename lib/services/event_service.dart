@@ -1,7 +1,6 @@
 import '../models/event_model.dart';
 
 class EventService {
-  
   final List<EventModel> _events = [];
 
   // Get all events
@@ -20,7 +19,8 @@ class EventService {
         .where((event) => event.enrolledUsers.contains(userId))
         .toList();
   }
- // Get saved events for a user
+
+  // Get saved events for a user
   List<EventModel> getSavedEvents(String userId) {
     return _events
         .where((event) => event.interestedUsers.contains(userId))
@@ -45,7 +45,8 @@ class EventService {
     if (index != -1 && !_events[index].enrolledUsers.contains(userId)) {
       _events[index].enrolledUsers.add(userId);
     }
-  }  // Get event by ID (async)
+  } // Get event by ID (async)
+
   Future<EventModel> getEventById(String eventId) async {
     final event = _events.firstWhere(
       (event) => event.id == eventId,
@@ -63,3 +64,14 @@ class EventService {
             enrolledUsers: [],
           ),
     );
+
+    if (event.id == 'null') {
+      throw Exception('Event not found');
+    }
+
+    await Future.delayed(
+      Duration(milliseconds: 300),
+    ); // Optional: simulate delay
+    return event;
+  }
+}
