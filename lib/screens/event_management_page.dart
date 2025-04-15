@@ -90,5 +90,17 @@ class _EventManagementPageState extends State<EventManagementPage> {
       });
     }
   }
+ Future<void> _selectTime() async {
+    TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+    if (picked != null) {
+      setState(() {
+        timeController.text = picked.format(context);
+      });
+    }
+  }
+
 
 
