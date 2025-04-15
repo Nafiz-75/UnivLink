@@ -4,6 +4,8 @@ import 'my_events_page.dart';
 import 'event_management_page.dart';
 
 class DrawerNavigation extends StatelessWidget {
+  const DrawerNavigation({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
