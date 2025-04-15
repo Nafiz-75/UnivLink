@@ -15,6 +15,7 @@ class UnivLinkApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'UnivLink',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
