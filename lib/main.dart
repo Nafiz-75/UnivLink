@@ -10,6 +10,8 @@ void main() {
 }
 
 class UnivLinkApp extends StatelessWidget {
+  const UnivLinkApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
