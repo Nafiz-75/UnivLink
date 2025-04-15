@@ -16,3 +16,21 @@ class EventDetailsPage extends StatefulWidget {
 class _EventDetailsPageState extends State<EventDetailsPage> {
   final EventService _eventService = EventService();
   late Future<EventModel> _event;
+  @override
+  void initState() {
+    super.initState();
+    _event = _eventService.getEventById(widget.eventId);
+  }
+
+  void _enrollInEvent() async {
+    try {
+      await _eventService.enrollInEvent(widget.eventId, widget.userId);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('You have successfully enrolled in the event!')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Failed to enroll in the event')));
+    }
+  }
