@@ -37,5 +37,18 @@ class DrawerNavigation extends StatelessWidget {
               );
             },
           ),
-
+          ListTile(
+            title: Text('Manage Event'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => EventManagementPage()),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
 
