@@ -4,6 +4,8 @@ import 'package:univlink/models/models/event_model.dart';
 import 'drawer_navigation.dart';
 
 class EventManagementPage extends StatefulWidget {
+  const EventManagementPage({super.key});
+
   @override
   _EventManagementPageState createState() => _EventManagementPageState();
 }
