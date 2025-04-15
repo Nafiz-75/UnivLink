@@ -17,4 +17,15 @@ class DrawerNavigation extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
+              // Home Page
+          ListTile(
+            title: Text('Home'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
+          ),
+
 
